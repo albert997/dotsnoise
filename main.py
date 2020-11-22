@@ -28,4 +28,3 @@ for frame in range(10):
 
 print("DONE")
 
-shutil.make_archive("comimages", 'zip', "images")

@@ -1,15 +1,13 @@
 from opensimplex import OpenSimplex
 from PIL import Image
 import numpy as np
-import shutil
-
 
 shape = (300,300)
 tmp = OpenSimplex()
 particles=[[150,150]for i in range(100)]
 precision=50
 
-for frame in range(10):
+for frame in range(100):
 	outimage=[[(0,0,0) for j in range(shape[1])] for i in range(shape[0])]
 	for p_index, p_val in enumerate(particles):
 		nx=tmp.noise2d(x=frame/precision,y=p_index)

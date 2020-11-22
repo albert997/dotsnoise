@@ -5,7 +5,7 @@ import numpy as np
 shape = (300,300)
 tmp = OpenSimplex()
 particles=[[150,150]for i in range(100)]
-precision=50
+precision=800
 
 for frame in range(100):
 	outimage=[[(0,0,0) for j in range(shape[1])] for i in range(shape[0])]
@@ -19,6 +19,10 @@ for frame in range(100):
 
 	for p_index, p_val in enumerate(particles):
 		outimage[p_val[0]][p_val[1]]=(255,255,255)
+		outimage[p_val[0]+1][p_val[1]]=(255,255,255)
+		outimage[p_val[0]-1][p_val[1]]=(255,255,255)
+		outimage[p_val[0]][p_val[1]+1]=(255,255,255)
+		outimage[p_val[0]][p_val[1]-1]=(255,255,255)
 
 	outimage = np.array(outimage, dtype=np.uint8)
 	img = Image.fromarray(outimage)

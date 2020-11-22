@@ -5,9 +5,9 @@ import numpy as np
 shape = (300,300)
 tmp = OpenSimplex()
 particles=[[150,150]for i in range(100)]
-precision=800
+precision=400
 
-for frame in range(100):
+for frame in range(1000):
 	outimage=[[(0,0,0) for j in range(shape[1])] for i in range(shape[0])]
 	for p_index, p_val in enumerate(particles):
 		nx=tmp.noise2d(x=frame/precision,y=p_index)
